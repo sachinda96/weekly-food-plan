@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Food Plan Manager</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f2f2f2;
+        }
+        .day-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .meal-card {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 10px;
+            margin: 10px;
+            width: 200px;
+            display: inline-block;
+            vertical-align: top;
+            background-color: #f9f9f9;
+            cursor: grab;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 20px;
+        }
+        button {
+            margin-top: 10px;
+        }
+
+        /* Background Images and Colors for Each Day */
+        #monday { background-image: url('monday.jpg'); background-color: #b3e0ff; }
+        #tuesday { background-image: url('tuesday.jpg'); background-color: #b3ffb3; }
+        #wednesday { background-image: url('wednesday.jpg'); background-color: #ffcc99; }
+        #thursday { background-image: url('thursday.jpg'); background-color: #ff6666; }
+        #friday { background-image: url('friday.jpg'); background-color: #d9b3ff; }
+        #saturday { background-image: url('saturday.jpg'); background-color: #99ccff; }
+        #sunday { background-image: url('sunday.jpg'); background-color: #ffccff; }
+    </style>
+</head>
+<body>
+
+<div class="day-container">
+    <h2>Weekly Food Plan</h2>
+</div>
+
+<div class="grid-container">
+    <!-- Day 1 -->
+    <div class="day" id="monday" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <h3>Monday</h3>
+        <div class="meal-card" id="mondayBreakfast" data-order="1" draggable="true" ondragstart="drag(event)">
+            <h4>Breakfast</h4>
+            <p>Your breakfast details here.</p>
+            <button onclick="editMeal('monday', 'Breakfast')">Edit</button>
+        </div>
+        <div class="meal-card" id="mondayLunch" data-order="2" draggable="true" ondragstart="drag(event)">
+            <h4>Lunch</h4>
+            <p>Your lunch details here.</p>
+            <button onclick="editMeal('monday', 'Lunch')">Edit</button>
+        </div>
+        <div class="meal-card" id="mondayDinner" data-order="3" draggable="true" ondragstart="drag(event)">
+            <h4>Dinner</h4>
+            <p>Your dinner details here.</p>
+            <button onclick="editMeal('monday', 'Dinner')">Edit</button>
+        </div>
+    </div>
+    
+    
+    <div class="grid-container">
+    <!-- Day 2 -->
+    <div class="day" id="tuesday" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <h3>Tuesday</h3>
+        <div class="meal-card" id="tuesdayBreakfast" data-order="1" draggable="true" ondragstart="drag(event)">
+            <h4>Breakfast</h4>
+            <p>Your breakfast details here.</p>
+            <button onclick="editMeal('tuesday', 'Breakfast')">Edit</button>
+        </div>
+        <div class="meal-card" id="tuesdayLunch" data-order="2" draggable="true" ondragstart="drag(event)">
+            <h4>Lunch</h4>
+            <p>Your lunch details here.</p>
+            <button onclick="editMeal('tuesday', 'Lunch')">Edit</button>
+        </div>
+        <div class="meal-card" id="tuesdayDinner" data-order="3" draggable="true" ondragstart="drag(event)">
+            <h4>Dinner</h4>
+            <p>Your dinner details here.</p>
+            <button onclick="editMeal('tuesday', 'Dinner')">Edit</button>
+        </div>
+    </div>
+
+    <div class="grid-container">
+    <!-- Day 3 -->
+    <div class="day" id="wednesday" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <h3>Wednesday</h3>
+        <div class="meal-card" id="wednesdayBreakfast" data-order="1" draggable="true" ondragstart="drag(event)">
+            <h4>Breakfast</h4>
+            <p>Your breakfast details here.</p>
+            <button onclick="editMeal('wednesday', 'Breakfast')">Edit</button>
+        </div>
+        <div class="meal-card" id="wednesdayLunch" data-order="2" draggable="true" ondragstart="drag(event)">
+            <h4>Lunch</h4>
+            <p>Your lunch details here.</p>
+            <button onclick="editMeal('wednesday', 'Lunch')">Edit</button>
+        </div>
+        <div class="meal-card" id="wednesdayDinner" data-order="3" draggable="true" ondragstart="drag(event)">
+            <h4>Dinner</h4>
+            <p>Your dinner details here.</p>
+            <button onclick="editMeal('wednesday', 'Dinner')">Edit</button>
+        </div>
+    </div>
+    
+    <div class="grid-container">
+    <!-- Day 4 -->
+    <div class="day" id="thursday" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <h3>Thursday</h3>
+        <div class="meal-card" id="thursdayBreakfast" data-order="1" draggable="true" ondragstart="drag(event)">
+            <h4>Breakfast</h4>
+            <p>Your breakfast details here.</p>
+            <button onclick="editMeal('thursday', 'Breakfast')">Edit</button>
+        </div>
+        <div class="meal-card" id="thursdayLunch" data-order="2" draggable="true" ondragstart="drag(event)">
+            <h4>Lunch</h4>
+            <p>Your lunch details here.</p>
+            <button onclick="editMeal('thursday', 'Lunch')">Edit</button>
+        </div>
+        <div class="meal-card" id="thursdayDinner" data-order="3" draggable="true" ondragstart="drag(event)">
+            <h4>Dinner</h4>
+            <p>Your dinner details here.</p>
+            <button onclick="editMeal('thursday', 'Dinner')">Edit</button>
+        </div>
+    </div>
+
+    <div class="grid-container">
+    <!-- Day 5 -->
+    <div class="day" id="friday" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <h3>Friday</h3>
+        <div class="meal-card" id="fridayBreakfast" data-order="1" draggable="true" ondragstart="drag(event)">
+            <h4>Breakfast</h4>
+            <p>Your breakfast details here.</p>
+            <button onclick="editMeal('friday', 'Breakfast')">Edit</button>
+        </div>
+        <div class="meal-card" id="fridayLunch" data-order="2" draggable="true" ondragstart="drag(event)">
+            <h4>Lunch</h4>
+            <p>Your lunch details here.</p>
+            <button onclick="editMeal('friday', 'Lunch')">Edit</button>
+        </div>
+        <div class="meal-card" id="fridayDinner" data-order="3" draggable="true" ondragstart="drag(event)">
+            <h4>Dinner</h4>
+            <p>Your dinner details here.</p>
+            <button onclick="editMeal('friday', 'Dinner')">Edit</button>
+        </div>
+    </div>
+
+
+   <div class="grid-container">
+    <!-- Day 6 -->
+    <div class="day" id="saturday" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <h3>Saturday</h3>
+        <div class="meal-card" id="saturdayBreakfast" data-order="1" draggable="true" ondragstart="drag(event)">
+            <h4>Breakfast</h4>
+            <p>Your breakfast details here.</p>
+            <button onclick="editMeal('saturday', 'Breakfast')">Edit</button>
+        </div>
+        <div class="meal-card" id="fridayLunch" data-order="2" draggable="true" ondragstart="drag(event)">
+            <h4>Lunch</h4>
+            <p>Your lunch details here.</p>
+            <button onclick="editMeal('saturday', 'Lunch')">Edit</button>
+        </div>
+        <div class="meal-card" id="saturdayDinner" data-order="3" draggable="true" ondragstart="drag(event)">
+            <h4>Dinner</h4>
+            <p>Your dinner details here.</p>
+            <button onclick="editMeal('saturday', 'Dinner')">Edit</button>
+        </div>
+    </div>
+    
+    <div class="grid-container">
+    <!-- Day 7 -->
+    <div class="day" id="sunday" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <h3>Sunday</h3>
+        <div class="meal-card" id="sundayBreakfast" data-order="1" draggable="true" ondragstart="drag(event)">
+            <h4>Breakfast</h4>
+            <p>Your breakfast details here.</p>
+            <button onclick="editMeal('sunday', 'Breakfast')">Edit</button>
+        </div>
+        <div class="meal-card" id="sundayLunch" data-order="2" draggable="true" ondragstart="drag(event)">
+            <h4>Lunch</h4>
+            <p>Your lunch details here.</p>
+            <button onclick="editMeal('sunday', 'Lunch')">Edit</button>
+        </div>
+        <div class="meal-card" id="sundayDinner" data-order="3" draggable="true" ondragstart="drag(event)">
+            <h4>Dinner</h4>
+            <p>Your dinner details here.</p>
+            <button onclick="editMeal('sunday', 'Dinner')">Edit</button>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    function editMeal(day, mealType) {
+        var newMeal = prompt("Enter the new meal details:");
+        if (newMeal !== null) {
+            document.getElementById(day + mealType).innerHTML = "<h4>" + mealType + "</h4><p>" + newMeal + "</p>" +
+                "<button onclick=\"editMeal('" + day + "', '" + mealType + "')\">Edit</button>";
+        }
+    }
+
+    function allowDrop(ev) {
+        ev.preventDefault();
+    }
+
+    function drag(ev) {
+        ev.dataTransfer.setData("text", ev.target.id);
+    }
+
+    function drop(ev) {
+        ev.preventDefault();
+        var data = ev.dataTransfer.getData("text");
+        var draggedElement = document.getElementById(data);
+
+        // Find the day where the meal card is dropped
+        var targetDayContainer = ev.target.closest('.day');
+        if (targetDayContainer) {
+            // Append the dragged element to the new day
+            targetDayContainer.appendChild(draggedElement);
+
+            // Reorder the meal cards based on the 'data-order' attribute
+            var mealCards = targetDayContainer.querySelectorAll('.meal-card');
+            var orderedMealCards = Array.from(mealCards).sort((a, b) => {
+                return a.getAttribute('data-order') - b.getAttribute('data-order');
+            });
+
+            // Replace the existing meal cards with the ordered ones
+            mealCards.forEach(card => card.remove());
+            orderedMealCards.forEach(card => targetDayContainer.appendChild(card));
+        }
+    }
+</script>
+
+</body>
+</html>
+
